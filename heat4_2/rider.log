@@ -1,0 +1,5 @@
+Un difusion 1 100 -999205 0 -999207 1
+Un difusion2 1 100 -999205 1 -999207 1
+Br barra_1 0 -999361
+Br barra_2 1 -999361
+End_PALM

@@ -1,0 +1,26 @@
+ 
+
+ ************************************************
+ *******  Palm MP driver v4.2.0  version  *******
+ ************************************************
+
+ 
+**************** Driver setup done, Beginning of PALM session **************** 
+
+
+ 
+WARNING: Version 0 of the space mat1d.calor1d not found
+
+ 
+
+ERROR IN if_drv_spacenotif_ongetshape with message: 
+Error in if_space_give_shape : the shape of the dynamic space mat1d.calor1d has probably not yet been set.
+
+ palm error type = 24 : Generic error
+
+ (C errno code = Operation now in progress)
+
+ 
+
+The PALM_MP Driver is going to abort the application due to previous messages
+

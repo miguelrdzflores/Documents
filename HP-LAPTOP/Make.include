@@ -1,0 +1,41 @@
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+PALMHOME = /home/miguel/library/OPALM/config1
+ 
+F90 = mpif90
+F90FLAGS = 
+LF90FLAGS = 
+F90EXTLIB = 
+ 
+F77 = mpif77
+F77FLAGS = 
+LF77FLAGS = 
+F77EXLIB = 
+ 
+FPPFLAGS = 
+ 
+CC = mpicc
+CCFLAGS = 
+LCCFLAGS = 
+CCEXTLIB = 
+ 
+C++ = mpic++
+C++FLAGS = 
+LC++FLAGS = 
+C++EXTLIB = 
+ 
+OMPFLAGS = 
+ 
+SOFLAGS = -shared -fpic
+ 
+INCLUDES = 
+LIBS = 
+ 
+PYTHON = python
+CYTHON = cython
+PYTHON_INCLUDE = `${PYTHON} -c 'from distutils import sysconfig; print( sysconfig.get_python_inc() )'`
+MPI4PY_INCLUDE = `${PYTHON} -c 'import mpi4py; print( mpi4py.get_include() )'`
+NUMPY_INCLUDE = `${PYTHON} -c 'import numpy; print( numpy.get_include() )'`
+ 
+USERINCF = 
+ 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #

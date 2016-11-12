@@ -1,0 +1,38 @@
+ ***********************************************************************
+ ***************       output file for process of         **************
+ ***************            branch=0 rank=0               **************
+ ***************         running entity index=2           **************
+ ***********************************************************************
+
+ Resuelve la ecuacion en el dominio
+ 0.00000E+00 < x <  0.20000E+01
+ Con           5  puntos en direccion x
+ delta X=   0.500000000    
+El valor de kappa es  0.75000E-01
+El valor de la frontera izquierda  es  0.10000E+03
+El valor de la frontera derecha  es  0.50000E+02
+El valor de Lambda  0.15000E-01
+ Condiciones iniciales
+       X               T
+ 0.00000E+00      0.10000E+03
+ 0.50000E+00      0.00000E+00
+ 0.10000E+01      0.00000E+00
+ 0.15000E+01      0.00000E+00
+ 0.20000E+01      0.50000E+02
+ Resultados
+       X               T
+ 0.00000E+00      0.10000E+03
+ 0.50000E+00      0.29553E+01
+ 0.10000E+01      0.77410E-01
+ 0.15000E+01      0.14790E+01
+ 0.20000E+01      0.50000E+02
+ Los resultados se encuentran el archivo resultados.out
+ ***********************************************************************
+ ***************       output file for process of         **************
+ ***************            branch=0 rank=0               **************
+ ***************         running entity index=3           **************
+ ***********************************************************************
+
+  
+ Valores de la Ecuacion de Calor en el Codigo No. 2
+   1.7961083834775141E-314   100.00000000000000        2.9553375244140625        7.7410131692886353E-002   1.4789886474609375        50.000000000000000     

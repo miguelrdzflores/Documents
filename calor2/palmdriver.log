@@ -1,0 +1,52 @@
+ 
+
+ ************************************************
+ *******  Palm MP driver v4.2.0  version  *******
+ ************************************************
+
+ 
+**************** Driver setup done, Beginning of PALM session **************** 
+
+
+ 
+BUFFER: WARNING: overwriting an object
+     object matriz
+     at time -999998, tag -999998, bproc 0
+
+ 
+BUFFER: WARNING: overwriting an object
+     object matriz
+     at time -999998, tag -999998, bproc 0
+
+ 
+BUFFER: WARNING: overwriting an object
+     object matriz
+     at time -999998, tag -999998, bproc 0
+
+ 
+BUFFER: WARNING: overwriting an object
+     object matriz
+     at time -999998, tag -999998, bproc 0
+
+ 
+BUFFER: WARNING: overwriting an object
+     object matriz
+     at time -999998, tag -999998, bproc 0
+
+ 
+BUFFER: WARNING: overwriting an object
+     object matriz
+     at time -999998, tag -999998, bproc 0
+
+ 
+ 6 warning(s) has(have) been generated during execution
+
+ 
+ Direct communications nb     : 0
+ Indirect communications nb   : 0
+ Explicit bufferised communications nb : 7
+
+
+ 
+************************* PALM session complete **************************
+

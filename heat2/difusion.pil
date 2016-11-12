@@ -1,0 +1,222 @@
+4                                : Major version
+2                                : Minor version
+0                                : Update version
+0                                : Systematic_flush_or_not
+#================
+#Verbosity_stuff
+#================
+50                               : Maximum_verbosity_level
+10                               : Branches
+10                               : Units
+10                               : Communications
+10                               : Steps
+10                               : Buffer
+10                               : Mailbuff
+10                               : Driver
+10                               : Scheduler
+10                               : Algebra
+10                               : Remapping
+10                               : Generic
+10                               : Process_management
+10                               : Data_manager
+10                               : Cwipi
+#================
+#Rider
+#================
+2000000                          : interval between two consecutives write
+#================
+#DRIVER reactivity
+#================
+0                                : reactivity
+#=====================
+#Allocation_variables
+#=====================
+2                                : ig_nb_proc
+1                                : ig_nb_branches
+3                                : ig_size_nodes_table
+3                                : ig_size_ents_table
+0                                : ig_size_objects_table
+8                                : ig_size_spaces_table
+1                                : ig_size_distr_table
+1                                : ig_size_so_table
+0                                : Step number
+#=====================
+#DTM specifications
+#=====================
+0                                : ig_dtm_minslave
+0                                : ig_dtm_maxslave
+1024                             : ig_dtm_mem_per_slave
+1 : C                            : ig_type_of_alloc 1 for C
+#==============
+# objects list
+#==============
+#
+#=============
+# spaces list
+#=============
+NULL
+one_integer
+one_real
+one_double
+one_complex
+one_logical
+one_string
+one_character
+#
+#============
+# ent list
+#============
+BUFFER
+barra1                           : unit name #1
+difusion                         : unit name #2
+#==============
+# distrib. list
+#==============
+SINGLE_PROC                      : default distrib.
+#================
+# sub-object list
+#================
+IDENTITY                         : default so.
+#================
+# node table
+#================
+# node #0
+IP_NODE_BEGIN                    : BEGIN barra1
+begin_branch_0                   : cl_node_name
+0                                : il_branch
+0                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+1                                : sla_node_relatives[0]
+# node #1
+IP_NODE_UNIT                     : LAUNCH difusion_1
+difusion                         : cl_node_name
+0                                : il_branch
+1                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+2                                : sla_node_relatives[0]
+# node #2
+IP_NODE_END                      : END barra1
+end_branch_0                     : cl_node_name
+0                                : il_branch
+0                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+2                                : sla_node_relatives[0]
+#============= 
+# Branch table 
+#============= 
+barra1                           : Branch name
+0                                : node begin branch_0
+IP_START_ON                      : on/off
+#================
+# ent table
+#================
+barra1                           : unit name #1
+IP_BRANCH                        : ent. type
+0                                : serv. func. for nbproc
+-1                               : branch index
+PALM_NO_BLOCK                    : cl_unit_block_name
+0                                : priority
+1                                : exec + nb arg
+PL_NO_EXEC                       : exe_name
+0                                : object
+0                                : nb unit
+difusion                         : unit name #2
+IP_UNIT                          : ent. type
+1                                : serv. func. for nbproc
+0                                : branch index
+PALM_NO_BLOCK                    : cl_unit_block_name
+100                              : priority
+1                                : exec + nb arg
+main_difusion                    : exe_name
+0                                : object
+0                                : nb unit
+#================
+# space table
+#================
+NULL                             : space name #1
+PL_INTEGER                       : type
+1                                : rank
+0                                : dim0
+$PL_INTEGER_SIZE                 : size
+0                                : nb items
+one_integer                      : space name #2
+PL_INTEGER                       : type
+1                                : rank
+1                                : dim0
+$PL_INTEGER_SIZE                 : size
+0                                : nb items
+one_real                         : space name #3
+PL_REAL                          : type
+1                                : rank
+1                                : dim0
+$PL_REAL_SIZE                    : size
+0                                : nb items
+one_double                       : space name #4
+PL_DOUBLE_PRECISION              : type
+1                                : rank
+1                                : dim0
+$PL_DOUBLE_PRECISION_SIZE        : size
+0                                : nb items
+one_complex                      : space name #5
+PL_COMPLEX                       : type
+1                                : rank
+1                                : dim0
+$PL_COMPLEX_SIZE                 : size
+0                                : nb items
+one_logical                      : space name #6
+PL_LOGICAL                       : type
+1                                : rank
+1                                : dim0
+$PL_LOGICAL_SIZE                 : size
+0                                : nb items
+one_string                       : space name #7
+PL_CHARACTER                     : type
+1                                : rank
+256                              : dim0
+$PL_CHARACTER_SIZE               : size
+0                                : nb items
+one_character                    : space name #8
+PL_CHARACTER                     : type
+1                                : rank
+4                                : dim0
+$PL_CHARACTER_SIZE               : size
+0                                : nb items
+#================
+# src U O S      
+#================
+0                                : number of src obj
+#================
+# tgt U O S      
+#================
+0                                : number of tgt obj
+#===============
+# distrib. table
+#===============
+SINGLE_PROC                      : name default distrib.
+PL_SINGLE_PROC_DESC              : type
+PL_STATIC                        : dynamicity 
+#===============
+# object. table
+#===============
+#===================
+# sub-object. table
+#===================
+IDENTITY                         : name default so.
+PL_IDENTITY                      : type
+#================
+# tubes
+#================
+0                                : nb tubes
+#================
+# Steps
+#================
+#steplang
+0
+0
+0
+0
+0
+#end steplang

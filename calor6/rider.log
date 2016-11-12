@@ -1,0 +1,5 @@
+Un condiciones 1 100 -999205 0 1 1
+Un solver 1 100 -999205 0 1 5
+Br b1 0 -999361
+Bl 1 1 100 -999205 0
+End_PALM

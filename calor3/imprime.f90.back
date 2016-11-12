@@ -1,0 +1,67 @@
+!
+!
+!
+!
+!
+!
+!
+!M.I. Miguel Angel Rodriguez Flores
+
+!PALM_UNIT -name imprime\
+!          -functions {F90 imprime}\
+!          -object_files {imprime.o}\
+!          -comment {imprime}
+!
+!PALM_SPACE -name vect1d\
+!           -shape (IP_SIZE)\
+!           -element_size PL_DOUBLE_PRECISION\
+!           -comment {tableau 1d double precision}
+!
+!PALM_OBJECT -name vecteur\
+!            -space vect1d\
+!            -time ON\
+!            -intent IN\
+!            -comment {vecteur a afficher}
+
+
+SUBROUTINE imprime 
+        USE palmlib
+        USE palm_user_param
+        IMPLICIT NONE
+              
+        CHARACTER (LEN=PL_LNAME) :: cl_object, cl_space
+        DOUBLE PRECISION :: dla_vect(IP_SIZE)
+        integer :: il_vect_time, il_err,i
+  
+      
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!       OPALM       
+!       Recepcion de informacion
+!
+          
+!            
+        il_vect_time = 1 ! valeur par defaut si pas de communication branchee
+        cl_space  = 'one_integer'
+        cl_object = 'ref_time'
+        CALL PALM_Get(cl_space, cl_object, PL_NO_TIME, PL_NO_TAG, il_vect_time, il_err)  
+        IF (il_err.ne.0) THEN
+               WRITE(PL_OUT, *) 'Le temps n''a pas ete recu'
+               WRITE(PL_OUT, *) 'Je travaille au temps par defaut : ', il_vect_time
+        ELSE
+               WRITE(PL_OUT,*) 'PALM_Get du vecteur au temps', il_vect_time
+        ENDIF
+! reception du vecteur
+        cl_space  = 'vect1d'
+        cl_object = 'vecteur'
+        CALL PALM_Get(cl_space, cl_object, il_vect_time, PL_NO_TAG, dla_vect, il_err)
+
+! ecriture
+
+        WRITE(PL_OUT,*) ' '
+        WRITE(PL_OUT,*) 'Vecteur_print, recu au temps :', il_vect_time
+        WRITE(PL_OUT,*) '100 premieres valeurs du vecteur :'
+        WRITE(PL_OUT,*) (dla_vect(i), i=1, IP_SIZE)
+        
+END SUBROUTINE imprime

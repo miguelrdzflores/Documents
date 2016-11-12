@@ -1,0 +1,13 @@
+Descripcion General
+
+Resuelve la ecuacion de calor e imprime desde dos distintas fuentes:
+1.- Desde el codigo principal difusion.f90 (en pantalla y archivo resultados.out)
+2.- Desde el codigo print (en pantalla)
+
+
+
+Instrucciones
+
+1.- Ejecute modulos.bash
+2.- make
+3.- mpirun -n 1 ./palm_main

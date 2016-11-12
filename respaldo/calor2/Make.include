@@ -1,0 +1,41 @@
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+PALMHOME = /home/miguel/OPALM/config3
+ 
+F90 = mpif90
+F90FLAGS = -fconvert=swap
+LF90FLAGS = 
+F90EXTLIB = 
+ 
+F77 = mpif77
+F77FLAGS = -fconvert=swap
+LF77FLAGS = 
+F77EXLIB = 
+ 
+FPPFLAGS = 
+ 
+CC = mpicc
+CCFLAGS = 
+LCCFLAGS = 
+CCEXTLIB = 
+ 
+C++ = mpicxx
+C++FLAGS = 
+LC++FLAGS = 
+C++EXTLIB = 
+ 
+OMPFLAGS = 
+ 
+SOFLAGS = -shared -fpic
+ 
+INCLUDES = -I/usr/include
+LIBS = -L/usr/lib -lnetcdff
+ 
+PYTHON = python
+CYTHON = cython
+PYTHON_INCLUDE = /usr/include/python2.7
+MPI4PY_INCLUDE = /usr/local/lib/python2.7/dist-packages/mpi4py/include/
+NUMPY_INCLUDE = /usr/lib/python2.7/dist-packages/numpy/core/include
+ 
+USERINCF = 
+ 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #

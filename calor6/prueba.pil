@@ -1,0 +1,641 @@
+4                                : Major version
+2                                : Minor version
+0                                : Update version
+0                                : Systematic_flush_or_not
+#================
+#Verbosity_stuff
+#================
+50                               : Maximum_verbosity_level
+10                               : Branches
+10                               : Units
+10                               : Communications
+10                               : Steps
+10                               : Buffer
+10                               : Mailbuff
+10                               : Driver
+10                               : Scheduler
+10                               : Algebra
+10                               : Remapping
+10                               : Generic
+10                               : Process_management
+10                               : Data_manager
+10                               : Cwipi
+#================
+#Rider
+#================
+2000000                          : interval between two consecutives write
+#================
+#DRIVER reactivity
+#================
+0                                : reactivity
+#=====================
+#Allocation_variables
+#=====================
+2                                : ig_nb_proc
+1                                : ig_nb_branches
+11                               : ig_size_nodes_table
+5                                : ig_size_ents_table
+12                               : ig_size_objects_table
+10                               : ig_size_spaces_table
+1                                : ig_size_distr_table
+1                                : ig_size_so_table
+0                                : Step number
+#=====================
+#DTM specifications
+#=====================
+0                                : ig_dtm_minslave
+0                                : ig_dtm_maxslave
+1024                             : ig_dtm_mem_per_slave
+1 : C                            : ig_type_of_alloc 1 for C
+#==============
+# objects list
+#==============
+b1_put_1.Block_1
+delta_t.condiciones
+lambda.condiciones
+t_min.condiciones
+vecteur_u.condiciones
+vecteur_x.condiciones
+T.solver
+U.solver
+X.solver
+delta_t.solver
+lambda.solver
+t_min.solver
+#
+#=============
+# spaces list
+#=============
+NULL
+one_integer
+one_real
+one_double
+one_complex
+one_logical
+one_string
+one_character
+vect1d.condiciones
+vect1d.solver
+#
+#============
+# ent list
+#============
+BUFFER
+Block_1
+b1                               : unit name #1
+condiciones                      : unit name #2
+solver                           : unit name #3
+#==============
+# distrib. list
+#==============
+SINGLE_PROC                      : default distrib.
+#================
+# sub-object list
+#================
+IDENTITY                         : default so.
+#================
+# node table
+#================
+# node #0
+IP_NODE_BEGIN                    : BEGIN b1
+begin_branch_0                   : cl_node_name
+0                                : il_branch
+0                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+1                                : sla_node_relatives[0]
+# node #1
+IP_NODE_BLOCK                    : BEGIN_BLOCK 1
+Block_1                          : cl_node_name
+0                                : il_branch
+1                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+10                               : sla_node_relatives[0]
+# node #2
+IP_NODE_UNIT                     : LAUNCH condiciones_1
+condiciones                      : cl_node_name
+0                                : il_branch
+2                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+3                                : sla_node_relatives[0]
+# node #3
+IP_NODE_INSTRUCTION              : var T init.
+br0_inst_1                       : cl_node_name
+0                                : il_branch
+2                                : il_node_level
+1                                : func trigger
+1                                : il_node_nb_relatives
+4                                : sla_node_relatives[0]
+# node #4
+IP_NODE_LOOP                     : DO T 1 5 1
+loop_0                           : cl_node_name
+0                                : il_branch
+2                                : il_node_level
+1                                : ila_node_cond[0]
+2                                : ila_node_cond[1]
+3                                : ila_node_cond[2]
+1                                : il_node_nb_relatives
+5                                : sla_node_relatives[0]
+# node #5
+IP_NODE_INSTRUCTION              : PALM_PUT one_integer 
+br0_inst_2                       : cl_node_name
+0                                : il_branch
+3                                : il_node_level
+2                                : func trigger
+1                                : il_node_nb_relatives
+6                                : sla_node_relatives[0]
+# node #6
+IP_NODE_UNIT                     : LAUNCH solver_1
+solver                           : cl_node_name
+0                                : il_branch
+3                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+7                                : sla_node_relatives[0]
+# node #7
+IP_NODE_INSTRUCTION              : var incrementation
+br0_inst_3                       : cl_node_name
+0                                : il_branch
+2                                : il_node_level
+3                                : func trigger
+1                                : il_node_nb_relatives
+8                                : sla_node_relatives[0]
+# node #8
+IP_NODE_END_LOOP                 : ENDDO
+end_loop                         : cl_node_name
+0                                : il_branch
+2                                : il_node_level
+0                                : ila_node_cond[0]
+2                                : il_node_nb_relatives
+9                                : sla_node_relatives[0]
+4                                : sla_node_relatives[1]
+# node #9
+IP_NODE_END_BLOCK                : END_BLOCK 1
+end_block                        : cl_node_name
+0                                : il_branch
+1                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+10                               : sla_node_relatives[0]
+# node #10
+IP_NODE_END                      : END b1
+end_branch_0                     : cl_node_name
+0                                : il_branch
+0                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+10                               : sla_node_relatives[0]
+#============= 
+# Branch table 
+#============= 
+b1                               : Branch name
+0                                : node begin branch_0
+IP_START_ON                      : on/off
+#================
+# ent table
+#================
+b1                               : unit name #1
+IP_BRANCH                        : ent. type
+0                                : serv. func. for nbproc
+-1                               : branch index
+PALM_NO_BLOCK                    : cl_unit_block_name
+0                                : priority
+1                                : exec + nb arg
+PL_NO_EXEC                       : exe_name
+0                                : object
+0                                : nb unit
+condiciones                      : unit name #2
+IP_UNIT                          : ent. type
+1                                : serv. func. for nbproc
+0                                : branch index
+Block_1                          : cl_unit_block_name
+100                              : priority
+1                                : exec + nb arg
+PL_NO_EXEC                       : exe_name
+0                                : object
+0                                : nb unit
+solver                           : unit name #3
+IP_UNIT                          : ent. type
+2                                : serv. func. for nbproc
+0                                : branch index
+Block_1                          : cl_unit_block_name
+100                              : priority
+1                                : exec + nb arg
+PL_NO_EXEC                       : exe_name
+0                                : object
+0                                : nb unit
+Block_1                          : block name
+IP_BLOCK                         : ent. type
+4                                : serv. func. for nbproc
+0                                : branch index
+PALM_NO_BLOCK                    : block name
+100                              : priority
+1                                : exec+nb_arg
+main_block_1                     : exec_name
+0                                : object
+2                                : nbunit
+condiciones                      : unit name
+solver                           : unit name
+#================
+# space table
+#================
+NULL                             : space name #1
+PL_INTEGER                       : type
+1                                : rank
+0                                : dim0
+$PL_INTEGER_SIZE                 : size
+0                                : nb items
+one_integer                      : space name #2
+PL_INTEGER                       : type
+1                                : rank
+1                                : dim0
+$PL_INTEGER_SIZE                 : size
+0                                : nb items
+one_real                         : space name #3
+PL_REAL                          : type
+1                                : rank
+1                                : dim0
+$PL_REAL_SIZE                    : size
+0                                : nb items
+one_double                       : space name #4
+PL_DOUBLE_PRECISION              : type
+1                                : rank
+1                                : dim0
+$PL_DOUBLE_PRECISION_SIZE        : size
+0                                : nb items
+one_complex                      : space name #5
+PL_COMPLEX                       : type
+1                                : rank
+1                                : dim0
+$PL_COMPLEX_SIZE                 : size
+0                                : nb items
+one_logical                      : space name #6
+PL_LOGICAL                       : type
+1                                : rank
+1                                : dim0
+$PL_LOGICAL_SIZE                 : size
+0                                : nb items
+one_string                       : space name #7
+PL_CHARACTER                     : type
+1                                : rank
+256                              : dim0
+$PL_CHARACTER_SIZE               : size
+0                                : nb items
+one_character                    : space name #8
+PL_CHARACTER                     : type
+1                                : rank
+4                                : dim0
+$PL_CHARACTER_SIZE               : size
+0                                : nb items
+vect1d.condiciones               : space name #9
+PL_DOUBLE_PRECISION              : type
+1                                : rank
+12                               : dim0
+$PL_DOUBLE_PRECISION_SIZE        : size
+0                                : nb items
+vect1d.solver                    : space name #10
+PL_DOUBLE_PRECISION              : type
+1                                : rank
+12                               : dim0
+$PL_DOUBLE_PRECISION_SIZE        : size
+0                                : nb items
+#================
+# src U O S      
+#================
+11                               : number of src obj
+Block_1                          : 
+b1_put_1.Block_1                 : object
+one_integer                      : space
+1                                : Nb of tube
+condiciones                      : src unit
+delta_t.condiciones              : object
+one_double                       : space
+1                                : Nb of tube
+condiciones                      : src unit
+lambda.condiciones               : object
+one_double                       : space
+1                                : Nb of tube
+condiciones                      : src unit
+t_min.condiciones                : object
+one_double                       : space
+1                                : Nb of tube
+condiciones                      : src unit
+vecteur_u.condiciones            : object
+vect1d.condiciones               : space
+1                                : Nb of tube
+condiciones                      : src unit
+vecteur_x.condiciones            : object
+vect1d.condiciones               : space
+1                                : Nb of tube
+solver                           : src unit
+U.solver                         : object
+vect1d.solver                    : space
+1                                : Nb of tube
+solver                           : src unit
+X.solver                         : object
+vect1d.solver                    : space
+1                                : Nb of tube
+solver                           : src unit
+delta_t.solver                   : object
+one_double                       : space
+1                                : Nb of tube
+solver                           : src unit
+lambda.solver                    : object
+one_double                       : space
+1                                : Nb of tube
+solver                           : src unit
+t_min.solver                     : object
+one_double                       : space
+1                                : Nb of tube
+#================
+# tgt U O S      
+#================
+6                                : number of tgt obj
+solver                           : tgt unit c2
+T.solver                         : object
+one_integer                      : space
+1                                : Nb of tube
+solver                           : tgt unit c2
+U.solver                         : object
+vect1d.solver                    : space
+2                                : Nb of tube
+solver                           : tgt unit c2
+X.solver                         : object
+vect1d.solver                    : space
+2                                : Nb of tube
+solver                           : tgt unit c2
+delta_t.solver                   : object
+one_double                       : space
+2                                : Nb of tube
+solver                           : tgt unit c2
+lambda.solver                    : object
+one_double                       : space
+2                                : Nb of tube
+solver                           : tgt unit c2
+t_min.solver                     : object
+one_double                       : space
+2                                : Nb of tube
+#===============
+# distrib. table
+#===============
+SINGLE_PROC                      : name default distrib.
+PL_SINGLE_PROC_DESC              : type
+PL_STATIC                        : dynamicity 
+#===============
+# object. table
+#===============
+b1_put_1.Block_1                 : object
+one_integer                      : space name 
+SINGLE_PROC                      : distributor 
+delta_t.condiciones              : object
+one_double                       : space name 
+SINGLE_PROC                      : distributor 
+lambda.condiciones               : object
+one_double                       : space name 
+SINGLE_PROC                      : distributor 
+t_min.condiciones                : object
+one_double                       : space name 
+SINGLE_PROC                      : distributor 
+vecteur_u.condiciones            : object
+vect1d.condiciones               : space name 
+SINGLE_PROC                      : distributor 
+vecteur_x.condiciones            : object
+vect1d.condiciones               : space name 
+SINGLE_PROC                      : distributor 
+T.solver                         : object
+one_integer                      : space name 
+SINGLE_PROC                      : distributor 
+U.solver                         : object
+vect1d.solver                    : space name 
+SINGLE_PROC                      : distributor 
+X.solver                         : object
+vect1d.solver                    : space name 
+SINGLE_PROC                      : distributor 
+delta_t.solver                   : object
+one_double                       : space name 
+SINGLE_PROC                      : distributor 
+lambda.solver                    : object
+one_double                       : space name 
+SINGLE_PROC                      : distributor 
+t_min.solver                     : object
+one_double                       : space name 
+SINGLE_PROC                      : distributor 
+#===================
+# sub-object. table
+#===================
+IDENTITY                         : name default so.
+PL_IDENTITY                      : type
+#================
+# tubes
+#================
+11                               : nb tubes
+# =====================tube 0 ==========================
+condiciones                      : src unit
+delta_t.condiciones              : src object
+solver                           : tgt unit
+delta_t.solver                   : tgt object
+IDENTITY                         : src so_descriptor
+IDENTITY                         : tgt so_descriptor
+0                                : timetag index function
+0                                : assoc. localisation index function
+PL_NO_TRACK                      : track
+PL_NO_DEBUG                      : debug
+MEMORY                           : data management
+PL_INS                           : algebra
+0                                : alpha coef
+0                                : beta coef
+PL_GET_EXACT                     : interpolation
+1                                : mailbuff locale possible 0/1 1=yes
+IP_NO_OPTIM                      : optimisation
+# =====================tube 1 ==========================
+condiciones                      : src unit
+lambda.condiciones               : src object
+solver                           : tgt unit
+lambda.solver                    : tgt object
+IDENTITY                         : src so_descriptor
+IDENTITY                         : tgt so_descriptor
+0                                : timetag index function
+0                                : assoc. localisation index function
+PL_NO_TRACK                      : track
+PL_NO_DEBUG                      : debug
+MEMORY                           : data management
+PL_INS                           : algebra
+0                                : alpha coef
+0                                : beta coef
+PL_GET_EXACT                     : interpolation
+1                                : mailbuff locale possible 0/1 1=yes
+IP_NO_OPTIM                      : optimisation
+# =====================tube 2 ==========================
+condiciones                      : src unit
+t_min.condiciones                : src object
+solver                           : tgt unit
+t_min.solver                     : tgt object
+IDENTITY                         : src so_descriptor
+IDENTITY                         : tgt so_descriptor
+0                                : timetag index function
+0                                : assoc. localisation index function
+PL_NO_TRACK                      : track
+PL_NO_DEBUG                      : debug
+MEMORY                           : data management
+PL_INS                           : algebra
+0                                : alpha coef
+0                                : beta coef
+PL_GET_EXACT                     : interpolation
+1                                : mailbuff locale possible 0/1 1=yes
+IP_NO_OPTIM                      : optimisation
+# =====================tube 3 ==========================
+condiciones                      : src unit
+vecteur_u.condiciones            : src object
+solver                           : tgt unit
+U.solver                         : tgt object
+IDENTITY                         : src so_descriptor
+IDENTITY                         : tgt so_descriptor
+0                                : timetag index function
+0                                : assoc. localisation index function
+PL_NO_TRACK                      : track
+PL_NO_DEBUG                      : debug
+MEMORY                           : data management
+PL_INS                           : algebra
+0                                : alpha coef
+0                                : beta coef
+PL_GET_EXACT                     : interpolation
+1                                : mailbuff locale possible 0/1 1=yes
+IP_NO_OPTIM                      : optimisation
+# =====================tube 4 ==========================
+condiciones                      : src unit
+vecteur_x.condiciones            : src object
+solver                           : tgt unit
+X.solver                         : tgt object
+IDENTITY                         : src so_descriptor
+IDENTITY                         : tgt so_descriptor
+0                                : timetag index function
+0                                : assoc. localisation index function
+PL_NO_TRACK                      : track
+PL_NO_DEBUG                      : debug
+MEMORY                           : data management
+PL_INS                           : algebra
+0                                : alpha coef
+0                                : beta coef
+PL_GET_EXACT                     : interpolation
+1                                : mailbuff locale possible 0/1 1=yes
+IP_NO_OPTIM                      : optimisation
+# =====================tube 5 ==========================
+Block_1                          : src unit
+b1_put_1.Block_1                 : src object
+solver                           : tgt unit
+T.solver                         : tgt object
+IDENTITY                         : src so_descriptor
+IDENTITY                         : tgt so_descriptor
+0                                : timetag index function
+0                                : assoc. localisation index function
+PL_NO_TRACK                      : track
+PL_NO_DEBUG                      : debug
+MEMORY                           : data management
+PL_INS                           : algebra
+0                                : alpha coef
+0                                : beta coef
+PL_GET_EXACT                     : interpolation
+0                                : mailbuff locale possible 0/1 1=yes
+IP_NO_OPTIM                      : optimisation
+# =====================tube 6 ==========================
+solver                           : src unit
+lambda.solver                    : src object
+solver                           : tgt unit
+lambda.solver                    : tgt object
+IDENTITY                         : src so_descriptor
+IDENTITY                         : tgt so_descriptor
+0                                : timetag index function
+0                                : assoc. localisation index function
+PL_NO_TRACK                      : track
+PL_NO_DEBUG                      : debug
+MEMORY                           : data management
+PL_INS                           : algebra
+0                                : alpha coef
+0                                : beta coef
+PL_GET_EXACT                     : interpolation
+1                                : mailbuff locale possible 0/1 1=yes
+IP_NO_OPTIM                      : optimisation
+# =====================tube 7 ==========================
+solver                           : src unit
+delta_t.solver                   : src object
+solver                           : tgt unit
+delta_t.solver                   : tgt object
+IDENTITY                         : src so_descriptor
+IDENTITY                         : tgt so_descriptor
+0                                : timetag index function
+0                                : assoc. localisation index function
+PL_NO_TRACK                      : track
+PL_NO_DEBUG                      : debug
+MEMORY                           : data management
+PL_INS                           : algebra
+0                                : alpha coef
+0                                : beta coef
+PL_GET_EXACT                     : interpolation
+1                                : mailbuff locale possible 0/1 1=yes
+IP_NO_OPTIM                      : optimisation
+# =====================tube 8 ==========================
+solver                           : src unit
+t_min.solver                     : src object
+solver                           : tgt unit
+t_min.solver                     : tgt object
+IDENTITY                         : src so_descriptor
+IDENTITY                         : tgt so_descriptor
+0                                : timetag index function
+0                                : assoc. localisation index function
+PL_NO_TRACK                      : track
+PL_NO_DEBUG                      : debug
+MEMORY                           : data management
+PL_INS                           : algebra
+0                                : alpha coef
+0                                : beta coef
+PL_GET_EXACT                     : interpolation
+1                                : mailbuff locale possible 0/1 1=yes
+IP_NO_OPTIM                      : optimisation
+# =====================tube 9 ==========================
+solver                           : src unit
+X.solver                         : src object
+solver                           : tgt unit
+X.solver                         : tgt object
+IDENTITY                         : src so_descriptor
+IDENTITY                         : tgt so_descriptor
+0                                : timetag index function
+0                                : assoc. localisation index function
+PL_NO_TRACK                      : track
+PL_NO_DEBUG                      : debug
+MEMORY                           : data management
+PL_INS                           : algebra
+0                                : alpha coef
+0                                : beta coef
+PL_GET_EXACT                     : interpolation
+1                                : mailbuff locale possible 0/1 1=yes
+IP_NO_OPTIM                      : optimisation
+# =====================tube 10 ==========================
+solver                           : src unit
+U.solver                         : src object
+solver                           : tgt unit
+U.solver                         : tgt object
+IDENTITY                         : src so_descriptor
+IDENTITY                         : tgt so_descriptor
+0                                : timetag index function
+0                                : assoc. localisation index function
+PL_NO_TRACK                      : track
+PL_NO_DEBUG                      : debug
+MEMORY                           : data management
+PL_INS                           : algebra
+0                                : alpha coef
+0                                : beta coef
+PL_GET_EXACT                     : interpolation
+1                                : mailbuff locale possible 0/1 1=yes
+IP_NO_OPTIM                      : optimisation
+#================
+# Steps
+#================
+#steplang
+0
+0
+0
+0
+0
+#end steplang

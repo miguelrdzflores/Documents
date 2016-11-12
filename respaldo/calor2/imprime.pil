@@ -1,0 +1,349 @@
+4                                : Major version
+2                                : Minor version
+0                                : Update version
+0                                : Systematic_flush_or_not
+#================
+#Verbosity_stuff
+#================
+50                               : Maximum_verbosity_level
+10                               : Branches
+10                               : Units
+10                               : Communications
+10                               : Steps
+10                               : Buffer
+10                               : Mailbuff
+10                               : Driver
+10                               : Scheduler
+10                               : Algebra
+10                               : Remapping
+10                               : Generic
+10                               : Process_management
+10                               : Data_manager
+10                               : Cwipi
+#================
+#Rider
+#================
+2000000                          : interval between two consecutives write
+#================
+#DRIVER reactivity
+#================
+0                                : reactivity
+#=====================
+#Allocation_variables
+#=====================
+2                                : ig_nb_proc
+2                                : ig_nb_branches
+6                                : ig_size_nodes_table
+5                                : ig_size_ents_table
+3                                : ig_size_objects_table
+10                               : ig_size_spaces_table
+1                                : ig_size_distr_table
+1                                : ig_size_so_table
+0                                : Step number
+#=====================
+#DTM specifications
+#=====================
+0                                : ig_dtm_minslave
+0                                : ig_dtm_maxslave
+1024                             : ig_dtm_mem_per_slave
+1 : C                            : ig_type_of_alloc 1 for C
+#==============
+# objects list
+#==============
+matriz
+matriz.difusion2
+matriz.calor1d
+#
+#=============
+# spaces list
+#=============
+NULL
+one_integer
+one_real
+one_double
+one_complex
+one_logical
+one_string
+one_character
+mat1d.difusion2
+mat1d.calor1d
+#
+#============
+# ent list
+#============
+BUFFER
+b1                               : unit name #1
+b2                               : unit name #2
+difusion2                        : unit name #3
+calor1d                          : unit name #4
+#==============
+# distrib. list
+#==============
+SINGLE_PROC                      : default distrib.
+#================
+# sub-object list
+#================
+IDENTITY                         : default so.
+#================
+# node table
+#================
+# node #0
+IP_NODE_BEGIN                    : BEGIN b1
+begin_branch_0                   : cl_node_name
+0                                : il_branch
+0                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+1                                : sla_node_relatives[0]
+# node #1
+IP_NODE_UNIT                     : LAUNCH calor1d_1
+calor1d                          : cl_node_name
+0                                : il_branch
+1                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+2                                : sla_node_relatives[0]
+# node #2
+IP_NODE_END                      : END b1
+end_branch_0                     : cl_node_name
+0                                : il_branch
+0                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+2                                : sla_node_relatives[0]
+# node #3
+IP_NODE_BEGIN                    : BEGIN b2
+begin_branch_1                   : cl_node_name
+1                                : il_branch
+0                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+4                                : sla_node_relatives[0]
+# node #4
+IP_NODE_UNIT                     : LAUNCH difusion2_1
+difusion2                        : cl_node_name
+1                                : il_branch
+1                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+5                                : sla_node_relatives[0]
+# node #5
+IP_NODE_END                      : END b2
+end_branch_1                     : cl_node_name
+1                                : il_branch
+0                                : il_node_level
+0                                : ila_node_cond[0]
+1                                : il_node_nb_relatives
+5                                : sla_node_relatives[0]
+#============= 
+# Branch table 
+#============= 
+b1                               : Branch name
+0                                : node begin branch_0
+IP_START_ON                      : on/off
+b2                               : Branch name
+3                                : node begin branch_1
+IP_START_ON                      : on/off
+#================
+# ent table
+#================
+b1                               : unit name #1
+IP_BRANCH                        : ent. type
+0                                : serv. func. for nbproc
+-1                               : branch index
+PALM_NO_BLOCK                    : cl_unit_block_name
+0                                : priority
+1                                : exec + nb arg
+PL_NO_EXEC                       : exe_name
+0                                : object
+0                                : nb unit
+b2                               : unit name #2
+IP_BRANCH                        : ent. type
+1                                : serv. func. for nbproc
+-1                               : branch index
+PALM_NO_BLOCK                    : cl_unit_block_name
+0                                : priority
+1                                : exec + nb arg
+PL_NO_EXEC                       : exe_name
+0                                : object
+0                                : nb unit
+difusion2                        : unit name #3
+IP_UNIT                          : ent. type
+2                                : serv. func. for nbproc
+1                                : branch index
+PALM_NO_BLOCK                    : cl_unit_block_name
+100                              : priority
+1                                : exec + nb arg
+main_difusion2                   : exe_name
+0                                : object
+0                                : nb unit
+calor1d                          : unit name #4
+IP_UNIT                          : ent. type
+3                                : serv. func. for nbproc
+0                                : branch index
+PALM_NO_BLOCK                    : cl_unit_block_name
+100                              : priority
+1                                : exec + nb arg
+main_calor1d                     : exe_name
+0                                : object
+0                                : nb unit
+#================
+# space table
+#================
+NULL                             : space name #1
+PL_INTEGER                       : type
+1                                : rank
+0                                : dim0
+$PL_INTEGER_SIZE                 : size
+0                                : nb items
+one_integer                      : space name #2
+PL_INTEGER                       : type
+1                                : rank
+1                                : dim0
+$PL_INTEGER_SIZE                 : size
+0                                : nb items
+one_real                         : space name #3
+PL_REAL                          : type
+1                                : rank
+1                                : dim0
+$PL_REAL_SIZE                    : size
+0                                : nb items
+one_double                       : space name #4
+PL_DOUBLE_PRECISION              : type
+1                                : rank
+1                                : dim0
+$PL_DOUBLE_PRECISION_SIZE        : size
+0                                : nb items
+one_complex                      : space name #5
+PL_COMPLEX                       : type
+1                                : rank
+1                                : dim0
+$PL_COMPLEX_SIZE                 : size
+0                                : nb items
+one_logical                      : space name #6
+PL_LOGICAL                       : type
+1                                : rank
+1                                : dim0
+$PL_LOGICAL_SIZE                 : size
+0                                : nb items
+one_string                       : space name #7
+PL_CHARACTER                     : type
+1                                : rank
+256                              : dim0
+$PL_CHARACTER_SIZE               : size
+0                                : nb items
+one_character                    : space name #8
+PL_CHARACTER                     : type
+1                                : rank
+4                                : dim0
+$PL_CHARACTER_SIZE               : size
+0                                : nb items
+mat1d.difusion2                  : space name #9
+PL_DOUBLE_PRECISION              : type
+1                                : rank
+11                               : dim0
+$PL_DOUBLE_PRECISION_SIZE        : size
+0                                : nb items
+mat1d.calor1d                    : space name #10
+PL_DOUBLE_PRECISION              : type
+1                                : rank
+11                               : dim0
+$PL_DOUBLE_PRECISION_SIZE        : size
+0                                : nb items
+#================
+# src U O S      
+#================
+2                                : number of src obj
+BUFFER                           : src_unit
+matriz                           : object
+mat1d.calor1d                    : space
+1                                : Nb of tube
+calor1d                          : src unit
+matriz.calor1d                   : object
+mat1d.calor1d                    : space
+1                                : Nb of tube
+#================
+# tgt U O S      
+#================
+2                                : number of tgt obj
+BUFFER                           : tgt_unit c4
+matriz                           : object
+mat1d.calor1d                    : space
+1                                : Nb of tube
+difusion2                        : tgt unit c2
+matriz.difusion2                 : object
+mat1d.difusion2                  : space
+1                                : Nb of tube
+#===============
+# distrib. table
+#===============
+SINGLE_PROC                      : name default distrib.
+PL_SINGLE_PROC_DESC              : type
+PL_STATIC                        : dynamicity 
+#===============
+# object. table
+#===============
+matriz                           : object
+mat1d.calor1d                    : space name 
+SINGLE_PROC                      : distributor 
+matriz.difusion2                 : object
+mat1d.difusion2                  : space name 
+SINGLE_PROC                      : distributor 
+matriz.calor1d                   : object
+mat1d.calor1d                    : space name 
+SINGLE_PROC                      : distributor 
+#===================
+# sub-object. table
+#===================
+IDENTITY                         : name default so.
+PL_IDENTITY                      : type
+#================
+# tubes
+#================
+2                                : nb tubes
+# =====================tube 0 ==========================
+BUFFER                           : src unit
+matriz                           : src object
+difusion2                        : tgt unit
+matriz.difusion2                 : tgt object
+IDENTITY                         : src so_descriptor
+IDENTITY                         : tgt so_descriptor
+0                                : timetag index function
+0                                : assoc. localisation index function
+PL_NO_TRACK                      : track
+PL_NO_DEBUG                      : debug
+MEMORY                           : data management
+PL_INS                           : algebra
+0                                : alpha coef
+0                                : beta coef
+PL_GET_EXACT                     : interpolation
+0                                : mailbuff locale possible 0/1 1=yes
+IP_NO_OPTIM                      : optimisation
+# =====================tube 1 ==========================
+calor1d                          : src unit
+matriz.calor1d                   : src object
+BUFFER                           : tgt unit
+matriz                           : tgt object
+IDENTITY                         : src so_descriptor
+IDENTITY                         : tgt so_descriptor
+0                                : timetag index function
+0                                : assoc. localisation index function
+PL_NO_TRACK                      : track
+PL_NO_DEBUG                      : debug
+MEMORY                           : data management
+PL_INS                           : algebra
+0                                : alpha coef
+0                                : beta coef
+PL_GET_EXACT                     : interpolation
+0                                : mailbuff locale possible 0/1 1=yes
+IP_NO_OPTIM                      : optimisation
+#================
+# Steps
+#================
+#steplang
+0
+0
+0
+0
+0
+#end steplang
