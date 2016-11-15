@@ -1,0 +1,7 @@
+Un condiciones 1 100 -999205 0 -999207 1
+Un solver 1 100 -999205 0 -999207 6
+Un solver2 1 100 -999205 1 -999207 6
+Un vecteur_print 1 100 -999205 1 -999207 6
+Br b1 0 -999361
+Br refin 1 -999361
+End_PALM
