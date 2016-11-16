@@ -131,7 +131,7 @@ SUBROUTINE solver2
          U_update(N+2)= u_max
          U(0:N+1) = U_update(0:N+1)
 
-         WRITE(filename,"('refin_',F0.3,'.out')")t_ref
+         WRITE(filename,"('refin_',1F5.3,'.out')")t_ref
          OPEN (UNIT=8, file=filename, ACTION="write", STATUS="replace")
          WRITE(8,'(a,e12.5)')"#Tiempo=  ", t_ref 
 

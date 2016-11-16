@@ -249,7 +249,7 @@ SUBROUTINE vecteur_print
   WRITE (PL_OUT,*)"Condiciones iniciales"
   WRITE (PL_OUT,'(7x,a,15X,a)')"X","U"
   
-  WRITE(filename,"('refin_',F0.3,'.out')")time 
+  WRITE(filename,"('refin_',1F5.3,'.out')")time 
   OPEN (UNIT=7, file=filename, ACTION="write", STATUS="replace")
     
   WRITE(7,'(a,e12.5)')"#Tiempo=  ", time
